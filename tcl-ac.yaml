@@ -41,6 +41,19 @@ climate:
     auto my_custom_climate = new MyCustomClimate(id(uart_bus));
     App.register_component(my_custom_climate);
     return {my_custom_climate};
+  sensors:
+    id: outside_temp
+    name: "Outside"
+    unit_of_measurement: "°C"
+    accuracy_decimals: 1
+    id: in_temp
+    name: "In"
+    unit_of_measurement: "°C"
+    accuracy_decimals: 1
+    id: out_temp
+    name: "Out"
+    unit_of_measurement: "°C"
+    accuracy_decimals: 1
 
   climates:
     - name: "TCL a/c"
