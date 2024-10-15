@@ -568,6 +568,9 @@ public:
         if (is_valid_xor(buffer, len)) {
           float curr_temp = (((buffer[17] << 8) | buffer[18]) / 374 - 32) / 1.8;
           this->is_changed = false;
+          int outside_temp = buffer[35] - 0x16;
+          int in_temp = buffer[36] - 0x16;
+          int out_temp = buffer[37] - 0x16;
 
           if (m_get_cmd_resp.data.power == 0x00) this->set_mode(climate::CLIMATE_MODE_OFF);
           else if (m_get_cmd_resp.data.mode == 0x01) this->set_mode(climate::CLIMATE_MODE_COOL);
